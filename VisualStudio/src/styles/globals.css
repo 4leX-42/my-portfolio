@@ -1,0 +1,34 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Anonymous Pro", monospace;
+  background: #000; /* Fondo negro estático */
+  color: #d4d4d4; 
+  overflow-x: hidden; /* Evitar desplazamientos horizontales */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative; 
+}
+
+/* animacion final */
+body::before {
+  content: '';
+  position: absolute;
+  bottom: 0; 
+  left: -50%; 
+  width: 200%; 
+  height: 5%; /* tamaño q ocupa */
+  background: linear-gradient(10deg, transparent, #aaff00, transparent); 
+  opacity: 0.2; 
+  animation: sweep 5s linear infinite; 
+  pointer-events: none; 
+}
+
+/* Animación del barrido */
+@keyframes sweep {
+  0% {
+    transform: translateX(-100%); /* Fuera de la pantalla */
+  }
+  100% {
+    transform: translateX(100%); /* Cruza la pantalla */
+  }
+}
